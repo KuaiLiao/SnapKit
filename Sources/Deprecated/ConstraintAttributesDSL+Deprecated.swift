@@ -27,11 +27,12 @@
     import AppKit
 #endif
 
-
-public extension ConstraintView {
+extension ConstraintAttributesDSL {
     
-    var snp: ConstraintViewDSL {
-        return ConstraintViewDSL(view: self)
+    // MARK: Baselines
+    @available(*, deprecated, renamed:"lastBaseline")
+    public var baseline: ConstraintItem {
+        return ConstraintItem(target: self.target, attributes: ConstraintAttributes.lastBaseline)
     }
     
 }

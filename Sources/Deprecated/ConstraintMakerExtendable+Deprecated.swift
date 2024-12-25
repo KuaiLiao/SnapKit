@@ -27,11 +27,12 @@
     import AppKit
 #endif
 
-
-public extension ConstraintView {
+extension ConstraintMakerExtendable {
     
-    var snp: ConstraintViewDSL {
-        return ConstraintViewDSL(view: self)
+    @available(*, deprecated, renamed:"lastBaseline")
+    public var baseline: ConstraintMakerExtendable {
+        self.description.attributes += .lastBaseline
+        return self
     }
     
 }
